@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ffo\components\Chef.cs" />
     <Compile Include="util\Hotkey.cs" />
     <Compile Include="util\MouseOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
