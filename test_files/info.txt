@@ -1,0 +1,6 @@
+box-size: 53px 53px
+
+
+1900x600 {
+ 80% UI = 32x32 item icons
+}

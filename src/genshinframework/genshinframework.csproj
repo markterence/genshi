@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InputManager">
+      <HintPath>..\..\lib\InputManager.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -43,10 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="components\RegionCapture.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ffo\components\Chef.cs" />
     <Compile Include="util\Hotkey.cs" />
     <Compile Include="util\MouseOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VInput.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

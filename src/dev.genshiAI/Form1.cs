@@ -12,9 +12,16 @@ namespace dev.genshiAI
 {
 	public partial class Form1 : Form
 	{
+		forms.ChefBotForm chefBotForm;
 		public Form1()
 		{
 			InitializeComponent();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			chefBotForm = new forms.ChefBotForm();
+			chefBotForm.Show();
 		}
 	}
 }
