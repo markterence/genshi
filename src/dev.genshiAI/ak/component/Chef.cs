@@ -69,7 +69,7 @@ namespace dev.genshiAI.ak.component
         /// <param name="sourceImage">From Region Selection</param>
         /// <param name="blobedImage"></param>
         /// <param name="findingsImage"></param>
-        public void chefEuclidFilter(Bitmap sourceImage, out Bitmap blobedImage, out Bitmap findingsImage, out List<string> similarity, out Point click)
+        public void chefEuclidFilter(Bitmap sourceImage, out List<string> similarity, out Point click, out Bitmap blobedImage, out Bitmap findingsImage)
         {
             Point cp = new Point();
             similarity = new List<string>();
@@ -139,9 +139,10 @@ namespace dev.genshiAI.ak.component
                                     {
                                         Drawing.Rectangle(data, match.Rectangle, Color.Fuchsia);
                                         similarity.Add(match.Similarity.ToString());
-                                        int clickX = this.chefTable.X + match.Rectangle.X-5;
-                                        int clickY = this.chefTable.Y + match.Rectangle.Y-3;
+                                        int clickX = this.chefTable.X + match.Rectangle.X-1;
+                                        int clickY = this.chefTable.Y + match.Rectangle.Y-1;
                                         cp = new Point(clickX, clickY);
+                                        click = cp;
                                     }
 								}
                                 sourceClone.UnlockBits(data);
@@ -153,7 +154,7 @@ namespace dev.genshiAI.ak.component
             }//end of unsafe blob filter
             if (similarity.Count <= 0)
                 cp = new Point(-1, -1);
-			blobedImage = filteredBitmap;
+            blobedImage = filteredBitmap;
             findingsImage = sourceClone;
             click = cp;
 		}

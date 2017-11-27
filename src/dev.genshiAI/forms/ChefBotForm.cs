@@ -128,7 +128,8 @@ namespace dev.genshiAI.forms
            
             chef.similarityOffset = float.Parse((string.IsNullOrEmpty(this.textBox2.Text)) ? "0.80" : this.textBox2.Text);
             chef.treshold = float.Parse((string.IsNullOrEmpty(this.textBox3.Text)) ? "0.77" : this.textBox3.Text);
-            chef.chefEuclidFilter(rg.GetBitty(), out image1, out image2, out similarity, out click);
+            rg.CameraCapture();
+            chef.chefEuclidFilter(rg.GetBitty(), out similarity, out click, out image1, out image2);
             this.pictureBox2.Image = image1;
             this.pictureBox3.Image = image2;
             this.textBox1.Lines = similarity.ToArray();
@@ -149,7 +150,7 @@ namespace dev.genshiAI.forms
             chef.similarityOffset = float.Parse((string.IsNullOrEmpty(this.textBox2.Text)) ? "0.90" : this.textBox2.Text);
             chef.treshold = float.Parse((string.IsNullOrEmpty(this.textBox3.Text)) ? "0.75" : this.textBox3.Text);
             rg.CameraCapture();
-            chef.chefEuclidFilter(rg.GetBitty(), out image1, out image2, out similarity, out click);
+            chef.chefEuclidFilter(rg.GetBitty(), out similarity, out click, out image1, out image2);
 
             //perform click
             if (click.X <= -1 || click.Y <= -1)
@@ -166,7 +167,7 @@ namespace dev.genshiAI.forms
 
             // this.pictureBox2.Image = image1;
             //this.pictureBox3.Image = image2;
-            this.pictureBox1.Image = rg.GetBitty();
+            //this.pictureBox1.Image = rg.GetBitty();
             this.textBox1.Lines = similarity.ToArray();
         }
     }
